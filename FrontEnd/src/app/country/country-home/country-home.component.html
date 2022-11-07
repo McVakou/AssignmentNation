@@ -1,0 +1,27 @@
+<div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Country Code 2</th>
+        <th scope="col">Area</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let country of countries; let i = index;" (click)="onRowClick(country)" class=table_row>
+        <td scope="row">{{ i+1 }}</td>
+        <td>{{ country.name }}</td>
+        <td>{{ country.countryCode2 }}</td>
+        <td>{{ country.area | number }}</td>
+      </tr>
+      <!-- <ul>
+        <li *ngFor="let item of countries | paginate: { itemsPerPage: 10, currentPage: p }">{{ item }}</li>
+      </ul> -->
+
+      <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+    </tbody>
+  </table>
+</div>
+
+<div></div>

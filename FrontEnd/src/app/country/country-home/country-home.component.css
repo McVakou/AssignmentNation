@@ -1,0 +1,8 @@
+.table_row {
+  cursor: pointer;
+
+}
+
+.table_row:hover {
+  background-color: lightblue;
+}

@@ -1,0 +1,15 @@
+<h3 *ngIf="this.countryName" class="text-center mt-4 p-2">Country: {{countryName }}</h3>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Language</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let language of languages; let i=index">
+      <td>{{ i+1 }}</td>
+      <td>{{ language.language }}</td>
+    </tr>
+  </tbody>
+</table>

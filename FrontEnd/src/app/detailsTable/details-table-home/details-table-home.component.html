@@ -1,0 +1,54 @@
+<div class="row m-4 p-2">
+  <h6 class="text-center display-6">Details</h6>
+</div>
+<div class="row m-1 p-2">
+  <div class="col-4">
+    <select class="form-select" aria-label="Regions" [(ngModel)]="regionFilter">
+      <option selected value='-1'>All Regions</option>
+      <option *ngFor="let region of regions">{{ region.name }}</option>
+    </select>
+  </div>
+  <div class="col-3">
+    <div class="input-group mb-3">
+      <span class="input-group-text">Year From</span>
+      <input type="number" class="form-control" aria-label="year from" min="0" [(ngModel)]="this.minYear">
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="input-group mb-3">
+      <span class="input-group-text">Year To</span>
+      <input type="number" class="form-control" aria-label="year to" min="0" [(ngModel)]="this.maxYear">
+    </div>
+  </div>
+  <div class="col-2">
+    <div class="input-group mb-3">
+      <button (click)="filterByRegionAndYear()" [disabled]="!isButtonDisabled()" class='btn btn-secondary'>Filter</button>
+    </div>
+  </div>
+</div>
+<div class="row mb-4 p-2">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Continent Name</th>
+        <th>Region Name</th>
+        <th>Country Name</th>
+        <th>Year</th>
+        <th>Population</th>
+        <th>GDP</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let detail of detailsFilteredByRegion; let i = index;">
+        <td>{{ i+1 }}</td>
+        <td>{{ detail.continentsName }}</td>
+        <td>{{ detail.regionsName }}</td>
+        <td>{{ detail.countriesName }}</td>
+        <td>{{ detail.year }}</td>
+        <td>{{ detail.population }}</td>
+        <td>{{ detail.gdp }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
